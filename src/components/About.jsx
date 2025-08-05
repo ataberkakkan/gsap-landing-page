@@ -2,6 +2,25 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
 
+const testimonialImages = [
+  {
+    id: 1,
+    image: "/images/profile1.png",
+  },
+  {
+    id: 2,
+    image: "/images/profile2.png",
+  },
+  {
+    id: 3,
+    image: "/images/profile3.png",
+  },
+  {
+    id: 4,
+    image: "/images/profile4.png",
+  },
+];
+
 const About = () => {
   useGSAP(() => {
     const titleSplit = SplitText.create("#about h2", { type: "words" });
@@ -51,18 +70,36 @@ const About = () => {
               detail — from the first muddle to the final garnish. That care is
               what turns a simple drink into something truly memorable.
             </p>
-            <div>
-              <img
-                src="/images/stars.png"
-                alt="rating"
-                className="w-[96px] h-[16px]"
-              />
-              <p className="md:text-3xl text-xl font-bold">
-                <span>4.5</span>/5
-              </p>
-              <p className="text-sm text-white-100">
-                More than 12000 customers
-              </p>
+            <div className="flex flex-row items-center">
+              <div>
+                <img
+                  src="/images/stars.png"
+                  alt="rating"
+                  className="w-[96px] h-[16px]"
+                />
+                <p className="md:text-3xl text-xl font-bold">
+                  <span>4.5</span>/5
+                </p>
+                <p className="text-sm text-white-100">
+                  More than 12000 customers
+                </p>
+              </div>
+              <div className="w-[2px] h-[100px] bg-white" />
+              <div
+                className="flex flex-row items-center py-4 px-6 rounded-full -space-x-5"
+                style={{
+                  backgroundImage: "url('/images/noise.png')",
+                }}
+              >
+                {testimonialImages.map((item) => (
+                  <img
+                    key={item.id}
+                    src={item.image}
+                    alt="testimonial"
+                    className="w-10 h-10 rounded-full"
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>

@@ -203,10 +203,6 @@ body {
 
         div {
           @apply flex flex-col justify-between md:gap-2 gap-5;
-
-          span {
-            @apply text-yellow font-bold text-5xl;
-          }
         }
       }
     }
