@@ -1,25 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
-
-const testimonialImages = [
-  {
-    id: 1,
-    image: "/images/profile1.png",
-  },
-  {
-    id: 2,
-    image: "/images/profile2.png",
-  },
-  {
-    id: 3,
-    image: "/images/profile3.png",
-  },
-  {
-    id: 4,
-    image: "/images/profile4.png",
-  },
-];
+import { profileLists } from "../constants";
 
 const About = () => {
   useGSAP(() => {
@@ -91,10 +73,10 @@ const About = () => {
                   backgroundImage: "url('/images/noise.png')",
                 }}
               >
-                {testimonialImages.map((item) => (
+                {profileLists.map((item, index) => (
                   <img
-                    key={item.id}
-                    src={item.image}
+                    key={index}
+                    src={item.imgPath}
                     alt="testimonial"
                     className="w-10 h-10 rounded-full"
                   />
